@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Heart, Brain, Lock } from "lucide-react";
+import { Shield, Heart, Brain, Lock, User } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Om AssessAI",
@@ -12,8 +12,8 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="flex-1 container py-12">
-        <div className="max-w-4xl mx-auto space-y-8">
+      <main className="flex-1 container py-12 md:py-16">
+        <div className="max-w-4xl mx-auto space-y-10">
           <div>
             <h1 className="text-4xl font-bold mb-4">Om AssessAI</h1>
             <p className="text-xl text-muted-foreground">
@@ -38,6 +38,48 @@ export default function AboutPage() {
                 Därför sätter AssessAI <strong>aldrig</strong> betyg automatiskt. Vi ger endast förslag 
                 och motiveringar som läraren kan granska, godkänna eller justera baserat på sin professionella 
                 kunskap om eleven och situationen.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <User className="h-6 w-6 text-primary" />
+                Varför jag byggde AssessAI
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Mitt namn är Erik Wolf Gardbring. Jag tog studenten sommaren 2025.
+              </p>
+              <p>
+                Under min tid på PA Fogelströms gymnasium i Stockholm läste jag Biologi 1.
+                Jag hade presterat väl på proven, men inte på provet om hållbar utveckling.
+              </p>
+              <p>
+                Feedbacken jag fick var &quot;Bra faktamässigt men inte om plaster&quot;. Vid muntligt
+                samtal påstod läraren att jag sänktes från A till C eftersom jag skrivit
+                &quot;plast är ett fantastiskt material&quot;, hon påstod att det var fel.
+              </p>
+              <p>
+                Det som frustrerade mig mest var känslan av orättvisa och maktmissbruk.
+                Det låter töntigt, men känslorna har fastnat. Inte för att jag brydde mig om
+                mina betyg, utan för att subjektiva bedömningar faktiskt förekommer.
+              </p>
+              <p>
+                Jag började fundera: hur många elever sitter med samma upplevelse? Bedömning
+                av samma elevtext kan variera stort mellan lärare. Inte för att lärare alltid
+                gör fel, utan för att det är genuint svårt att vara konsekvent när man rättar
+                hundratals snarlika texter.
+              </p>
+              <p>
+                AssessAI föddes ur denna idé. AI kan hjälpa lärare att bli mer konsekventa –
+                inte genom att ersätta deras omdöme, utan genom att ge dem ett förslag att utgå
+                ifrån, alltid kopplat till Skolverkets kunskapskrav.
+              </p>
+              <p className="font-medium text-foreground">
+                Läraren fattar alltid det slutgiltiga beslutet.
               </p>
             </CardContent>
           </Card>

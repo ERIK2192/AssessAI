@@ -265,7 +265,9 @@ export function AnalyzeForm() {
                     : "Texten raderas automatiskt efter analysen och sparas aldrig permanent"
                   }
                 </p>
-                <p className="font-mono">{studentText.length} tecken</p>
+                <p className="font-mono">
+                  {studentText.length} tecken · {studentText.trim() ? studentText.trim().split(/\s+/).length : 0} ord
+                </p>
               </div>
             </div>
 

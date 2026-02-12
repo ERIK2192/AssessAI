@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Copy, Lock } from "lucide-react"
+import { CheckCircle, Copy, Lock, ThumbsDown, Minus, ThumbsUp, MessageSquare } from "lucide-react"
 import type { Analysis, Subject, EducationLevel, GymnasiumCourse } from "@/types"
 
 interface AnalysisResultProps {
@@ -18,6 +18,7 @@ interface AnalysisResultProps {
 
 export function AnalysisResult({ analysis, studentText, subject, educationLevel, course, className, studentId }: AnalysisResultProps) {
   const [approved, setApproved] = useState(false)
+  const [surveyAnswer, setSurveyAnswer] = useState<string | null>(null)
 
   const getGradeColor = (grade: string) => {
     switch (grade) {
@@ -243,6 +244,62 @@ Denna bedömning är gjord med AssessAI AI-assistent och har granskats av lärar
               Godkänn och fortsätt
             </Button>
           </div>
+        </CardContent>
+      </Card>
+
+      {/* Demo survey */}
+      <Card>
+        <CardContent className="pt-6">
+          {surveyAnswer ? (
+            <div className="text-center py-2">
+              <p className="text-sm text-muted-foreground">
+                Tack för din feedback! Den hjälper oss att förbättra AssessAI.
+              </p>
+            </div>
+          ) : (
+            <div className="text-center space-y-3">
+              <p className="text-sm font-medium">Hur upplever du bedömningen?</p>
+              <div className="flex justify-center gap-3">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setSurveyAnswer("negative")}
+                  className="flex flex-col items-center gap-1 h-auto py-3 px-5"
+                >
+                  <ThumbsDown className="h-5 w-5" />
+                  <span className="text-xs">Bristfällig</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setSurveyAnswer("neutral")}
+                  className="flex flex-col items-center gap-1 h-auto py-3 px-5"
+                >
+                  <Minus className="h-5 w-5" />
+                  <span className="text-xs">Okej</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  onClick={() => setSurveyAnswer("positive")}
+                  className="flex flex-col items-center gap-1 h-auto py-3 px-5"
+                >
+                  <ThumbsUp className="h-5 w-5" />
+                  <span className="text-xs">Bra</span>
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Har du mer detaljerad feedback?{" "}
+                <a
+                  href="mailto:erikgardbring@gmail.com?subject=Feedback%20p%C3%A5%20AssessAI"
+                  className="text-primary underline hover:text-primary/80 inline-flex items-center gap-1"
+                >
+                  <MessageSquare className="h-3 w-3 inline" />
+                  Skicka ett meddelande
+                </a>
+              </p>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>

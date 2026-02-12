@@ -289,7 +289,7 @@ ${'='.repeat(50)}
               disabled={isRunning}
             />
             <div className="text-xs text-muted-foreground text-right font-mono">
-              {currentText.length} tecken
+              {currentText.length} tecken · {currentText.trim() ? currentText.trim().split(/\s+/).length : 0} ord
             </div>
           </div>
 
