@@ -302,6 +302,16 @@ Denna bedömning är gjord med AssessAI AI-assistent och har granskats av lärar
           )}
         </CardContent>
       </Card>
+
+      {/* School CTA */}
+      <div className="text-center pt-2">
+        <p className="text-sm text-muted-foreground">
+          Vill du använda AssessAI på din skola?{" "}
+          <a href="/kontakt" className="text-primary underline hover:text-primary/80">
+            Kontakta oss
+          </a>
+        </p>
+      </div>
     </div>
   )
 }

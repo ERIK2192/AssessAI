@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { SchoolCTA } from "@/components/school-cta";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <SchoolCTA />
       </main>
       <Footer />
     </div>

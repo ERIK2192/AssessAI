@@ -18,6 +18,7 @@ export function Header() {
     { name: "Analysera", href: "/analyze" },
     { name: "Insikter", href: "/insights" },
     { name: "Om AssessAI", href: "/about" },
+    { name: "Kontakt", href: "/kontakt" },
   ]
 
   return (

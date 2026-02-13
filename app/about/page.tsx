@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Shield, Heart, Brain, Lock, User } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -191,11 +193,19 @@ export default function AboutPage() {
           </Card>
 
           <Card className="bg-primary/5">
-            <CardContent className="pt-6">
-              <p className="text-center text-sm text-muted-foreground">
-                AssessAI är ett open-source projekt. Har du frågor eller feedback?{" "}
+            <CardContent className="pt-6 space-y-3">
+              <p className="text-center text-sm font-medium">Vill du veta mer?</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
+                <Link href="/analyze">
+                  <Button variant="outline" size="sm">Testa AssessAI gratis</Button>
+                </Link>
+                <Link href="/kontakt">
+                  <Button variant="outline" size="sm">Kontakta oss</Button>
+                </Link>
+              </div>
+              <p className="text-center text-xs text-muted-foreground">
                 <a href="mailto:erikgardbring@gmail.com" className="text-primary hover:underline">
-                  Kontakta oss
+                  erikgardbring@gmail.com
                 </a>
               </p>
             </CardContent>
